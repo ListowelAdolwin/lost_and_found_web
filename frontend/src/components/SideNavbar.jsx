@@ -64,11 +64,11 @@ function SideNavbar() {
 			>
 				<div className="px-6">
 					<Link
-						className="flex-none text-xl font-semibold dark:text-white"
+						className="flex-none text-xl font-semibold dark:text-white text-purple-900"
 						to="/"
 						aria-label="Brand"
 					>
-						Lost And Found
+						FoundIt
 					</Link>
 				</div>
 				<nav

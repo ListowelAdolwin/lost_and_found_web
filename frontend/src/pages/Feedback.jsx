@@ -85,7 +85,7 @@ const FeedbackForm = (props) => {
 	useEffect(() => {
 		if (theme !== "dark") {
 			document.body.style.background =
-				theme === "dark" ? "#17153B" : "#f5f5f5";
+				theme === "dark" ? "#17153B" : "#eeeeee";
 		} else {
 			document.body.style.background = "#17153B";
 		}
@@ -158,10 +158,10 @@ const FeedbackForm = (props) => {
 			)}
 			<div className=""></div>
 			<div
-				className="addnotes bg-white dark:bg-custom-bg-300 dark:text-white"
+				className="addnotes bg-gray-50 dark:bg-custom-bg-300 dark:text-white"
 				style={{ paddingTop: "50px", margin: "auto" }}
 			>
-				<div className="right ps-5 pe-5 pt-4 mb-5">
+				<div className="right ps-5 pe-5 pt-4 mb-5 ">
 					<div className="d-flex justify-content-center mb-2">
 						<h3
 							className="text-3xl"
@@ -246,7 +246,7 @@ const FeedbackForm = (props) => {
 							How would you rate us?
 						</h6>
 						<div className="container-star flex py-3">
-							<div className="star-widget text-2xl sm:text-xl">
+							<div className="star-widget text-2xl sm:text-3xl">
 								<input
 									type="radio"
 									name="rate"
