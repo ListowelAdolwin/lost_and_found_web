@@ -90,7 +90,7 @@ const SignUp = () => {
 									Name
 								</label>
 								<input
-									className="text-gray-700 dark:text-white border border-gray-300 rounded py-2 px-4 block w-full focus:outline-2 focus:outline-blue-700"
+									className="text-gray-700 border border-gray-300 rounded py-2 px-4 block w-full focus:outline-2 focus:outline-blue-700"
 									type="text"
 									placeholder="Enter your name"
 									name="name"
@@ -104,7 +104,7 @@ const SignUp = () => {
 									Reference Number
 								</label>
 								<input
-									className="text-gray-700 dark:text-white border border-gray-300 rounded py-2 px-4 block w-full focus:outline-2 focus:outline-blue-700"
+									className="text-gray-700 border border-gray-300 rounded py-2 px-4 block w-full focus:outline-2 focus:outline-blue-700"
 									type="text"
 									placeholder="Enter a reference number"
 									name="reference"
@@ -120,7 +120,7 @@ const SignUp = () => {
 									</label>
 								</div>
 								<input
-									className="text-gray-700 dark:text-white border border-gray-300 rounded py-2 px-4 block w-full focus:outline-2 focus:outline-blue-700"
+									className="text-gray-700 border border-gray-300 rounded py-2 px-4 block w-full focus:outline-2 focus:outline-blue-700"
 									type="password"
 									placeholder="Enter your password"
 									name="password"
