@@ -58,7 +58,7 @@ const Faq = () => {
 	}, [theme]);
 
 	return (
-		<div className="dark:text-white">
+		<div className="dark:text-white min-h-screen">
 			<section
 				style={{
 					marginBottom: "150px",

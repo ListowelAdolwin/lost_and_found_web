@@ -28,7 +28,7 @@ const About = () => {
 	}, [theme]);
 
 	return (
-		<div className={`about-us dark:text-white`}>
+		<div className={`about-us dark:text-white min-h-screen`}>
 			<section
 				className={`about-us`}
 				style={{ fontFamily: "'Poppins', sans-serif" }}

@@ -73,7 +73,7 @@ const ItemGallery = (props) => {
 	}, [props.theme]);
 
 	return (
-		<>
+		<div className="min-h-screen">
 			<h1
 				className="text-center text-3xl"
 				style={{
@@ -155,7 +155,7 @@ const ItemGallery = (props) => {
 			</div>
 
 			<ClaimItem open={open} setOpen={setOpen} itemId={currentItemId} />
-		</>
+		</div>
 	);
 };
 

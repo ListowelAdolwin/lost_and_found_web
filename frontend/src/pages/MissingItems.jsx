@@ -152,16 +152,17 @@ const MissingItems = (props) => {
 
 	return (
 		<>
-			<div>
+			<div className="min-h-screen">
 				<h1 className="text-center text-3xl dark:text-gray-100">
 					Help Us Find
 				</h1>
 
-				{spinner ? (
+				{spinner && (
 					<div className="flex items-center justify-center mt-20 mb-96">
 						<img src={loading} alt="loading" width="40px" />
 					</div>
-				) : fetched ? (
+				)}
+				{fetched && (
 					<div className="cards-container">
 						{lostItems.map((item) => (
 							<div
@@ -189,8 +190,7 @@ const MissingItems = (props) => {
 									<p className="text-xl font-semibold">
 										{cats[item.subcategory]}
 									</p>
-									<p className="text-md"
-									>
+									<p className="text-md">
 										{item.description}
 									</p>
 
@@ -228,7 +228,8 @@ const MissingItems = (props) => {
 							</div>
 						))}
 					</div>
-				) : (
+				)}
+				{!spinner && (
 					<div className="text-center my-5 pt-5">
 						<h4>No items to display ...</h4>
 					</div>

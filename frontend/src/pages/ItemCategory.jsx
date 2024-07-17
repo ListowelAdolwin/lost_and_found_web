@@ -92,10 +92,8 @@ const ItemCategory = () => {
 
 	return (
 		<>
-			<div style={{ marginBottom: "150px" }}>
-				<h1
-					className="text-center pt-5 text-3xl font-bold dark:text-gray-100"
-				>
+			<div className="min-h-screen" style={{ marginBottom: "150px" }}>
+				<h1 className="text-center pt-5 text-3xl font-bold dark:text-gray-100">
 					Select A Category
 				</h1>
 				<div className="flex flex-wrap justify-center">

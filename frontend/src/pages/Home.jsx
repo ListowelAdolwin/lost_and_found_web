@@ -34,7 +34,7 @@ const Home = () => {
 
 	return (
 		<>
-			<div className="h-screen">
+			<div className="min-h-screen">
 				<div className="container-fluid">
 					<div
 						className="flex justify-between pt-5 mt-5"
