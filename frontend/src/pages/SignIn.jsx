@@ -14,6 +14,7 @@ const SignIn = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
+	const BASE_URL = import.meta.env.VITE_BASE_URL;
 	const theme = localStorage.getItem("theme");
 
 	useEffect(() => {
@@ -41,7 +42,7 @@ const SignIn = () => {
 
 		try {
 			const response = await fetch(
-				"http://127.0.0.1:3000/api/auth/signin",
+				`${BASE_URL}/api/auth/signin`,
 				{
 					method: "POST",
 					headers: { "Content-Type": "application/json" },

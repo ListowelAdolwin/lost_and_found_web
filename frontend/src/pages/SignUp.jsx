@@ -11,6 +11,7 @@ const SignUp = () => {
 	});
 
 	const navigate = useNavigate();
+	const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 	const theme = localStorage.getItem("theme");
 
@@ -39,14 +40,11 @@ const SignUp = () => {
 
 		console.log(formData);
 		try {
-			const response = await fetch(
-				"http://127.0.0.1:3000/api/auth/signup",
-				{
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify(formData),
-				}
-			);
+			const response = await fetch(`${BASE_URL}/api/auth/signup`, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			});
 
 			const result = await response.json();
 			if (response.status === 201) {
