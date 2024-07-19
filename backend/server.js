@@ -25,6 +25,7 @@ app.use(
 			'http://127.0.0.1:3000',
 			'https://foundit-xyz.onrender.com',
 			'http://foundit-xyz.onrender.com',
+			'http://localhost:8081',
 		],
 		methods: ["GET", "POST", "PUT", "DELETE"],
 		credentials: true,
