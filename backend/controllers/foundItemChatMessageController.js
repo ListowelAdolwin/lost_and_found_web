@@ -1,7 +1,7 @@
-import FoundItem from "../models/FoundItem";
-import FoundItemChat from "../models/FoundItemChat";
-import FoundItemChatMessage from "../models/FoundItemChatMessage";
-import User from "../models/User";
+const User = require('../models/User.js');
+const FoundItemChat = require('../models/FoundItemChat.js');
+const FoundItem = require('../models/FoundItem.js');
+const FoundItemChatMessage = require('../models/FoundItemChatMessage.js');
 
 const addMessage = async (req, res) => {
   const { chatId, message, sender } = req.body;

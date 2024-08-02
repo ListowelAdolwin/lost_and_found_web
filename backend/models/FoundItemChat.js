@@ -25,6 +25,6 @@ const foundItemchatSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const FoundItemChat = mongoose.model('FoundItem', foundItemchatSchema);
+const FoundItemChat = mongoose.model('FoundItemChat', foundItemchatSchema);
 
 module.exports = FoundItemChat;
