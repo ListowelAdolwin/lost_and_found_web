@@ -8,6 +8,8 @@ const foundItemsRoutes = require("./routes/foundItemsRoutes.js");
 const claimItemRoutes = require("./routes/claimRoutes.js")
 const feedbackRoutes = require("./routes/feedbackRoutes.js");
 const reportLostItemsRoutes = require("./routes/ReportFoundRoutes.js")
+const foundItemChatRoutes = require('./routes/foundItemChatRoutes.js')
+const FoundItemChatMessageRoutes = require('./routes/foundItemChatMessageRoutes.js')
 
 
 dotenv.config();
@@ -38,6 +40,8 @@ app.use('/api/found-items', foundItemsRoutes)
 app.use('/api/claim', claimItemRoutes)
 app.use('/api/feedback', feedbackRoutes)
 app.use('/api/report-found', reportLostItemsRoutes)
+app.use('/api/found-items-chat', foundItemChatRoutes)
+app.use('/api/found-items-chat-message', FoundItemChatMessageRoutes)
 
 connectDB()
 
