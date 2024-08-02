@@ -12,10 +12,10 @@ const addRetrieveChat = async (req, res) => {
 
   try {
     const item = await FoundItem.findById(itemId)
-    const owner = await User.findById(owner)
+    const owner = await User.findById(ownerId)
     const poster = item.poster
 
-    const chatExist = await FoundItemChat.find({item, poster, owner}).populate('item')
+    const chatExist = await FoundItemChat.findOne({item, poster, owner}).populate('item poster owner')
 
     if (chatExist) {
       const chatMessages = await FoundItemChatMessage.find({chat: chatExist})
@@ -26,6 +26,7 @@ const addRetrieveChat = async (req, res) => {
     await newFountItemChat.save();
     res.status(201).json({foundItemChat: newFountItemChat, chatMessages: [] });
   } catch (error) {
+    console.log(error)
     res.status(500).json({ message: "An error occurred while retrieving item chat." });
   }
 };
