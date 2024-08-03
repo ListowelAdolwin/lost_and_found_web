@@ -18,7 +18,7 @@ const addMessage = async (req, res) => {
 
     const newMessage = new FoundItemChatMessage({ chat, message, sender });
     await newMessage.save();
-    res.status(201).json({message: "Message saved" });
+    res.status(201).json({newMessage, message: "Message saved" });
   } catch (error) {
     res.status(500).json({ message: "An error occurred while saving new message" });
   }
