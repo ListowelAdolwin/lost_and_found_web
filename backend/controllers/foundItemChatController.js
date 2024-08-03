@@ -26,7 +26,7 @@ const addRetrieveChat = async (req, res) => {
 
 
     if (chatExist) {
-      const chatMessages = await FoundItemChatMessage.find({chat: chatExist})
+      const chatMessages = await FoundItemChatMessage.find({chat: chatExist}).sort({createdAt: -1})
       return res.json({chatMessages: chatMessages, foundItemChat: chatExist})
     }
 
