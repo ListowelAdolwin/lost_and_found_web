@@ -19,7 +19,7 @@ const addRetrieveChat = async (req, res) => {
     const chatExist = await FoundItemChat.findOne({ item, poster, owner })
   .populate({
     path: 'item',
-    select: 'name itemImages description',
+    select: 'name itemImages description poster',
   })
   .populate('poster', 'name reference')
   .populate('owner', 'name reference');
