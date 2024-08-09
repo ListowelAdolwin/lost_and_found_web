@@ -7,11 +7,16 @@ const foundItemchatMessageSchema = new mongoose.Schema(
       ref: 'FoundItemChat',
       required: true
     },
-     sender: {
-      type: String,
-      enum: ['owner', 'poster'],
+    sender: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
       required: true
     },
+    //  sender: {
+    //   type: String,
+    //   enum: ['owner', 'poster'],
+    //   required: true
+    // },
     message: String,
   
   },

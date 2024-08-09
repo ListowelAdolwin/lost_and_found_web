@@ -4,13 +4,14 @@ const FoundItem = require('../models/FoundItem.js');
 const FoundItemChatMessage = require('../models/FoundItemChatMessage.js');
 
 const addMessage = async (req, res) => {
-  const { chatId, message, sender } = req.body;
+  const { chatId, message, senderId } = req.body;
 
-  if (!chatId || !message || !sender) {
+  if (!chatId || !message || !senderId) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
   try {
+    const sender = await User.findById(senderId)
     const chat = await FoundItemChat.findById(chatId)
     if (!chat) {
       return res.json({message: "Couldn't find chat"})
