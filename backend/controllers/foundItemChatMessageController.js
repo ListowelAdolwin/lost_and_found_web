@@ -7,7 +7,7 @@ const addMessage = async (req, res) => {
   const { chatId, message, senderId } = req.body;
 
   if (!chatId || !message || !senderId) {
-    return res.status(400).json({ message: "All fields are required." });
+    return res.status(400).json({ message: "All fields are required." })
   }
 
   try {
