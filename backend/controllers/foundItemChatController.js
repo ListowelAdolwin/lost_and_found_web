@@ -74,8 +74,37 @@ const getUserFoundChats = async (req, res) => {
   }
 }
 
+
+const getUserFoundChat = async (req, res) => {
+  const { chatId } = req.params;
+
+  try {
+    const chat = await FoundItemChat.findById(chatId)
+      .populate({
+        path: "item",
+        select: "name itemImages description poster",
+      })
+      .populate("poster", "name reference")
+      .populate("owner", "name reference");
+
+    const chatMessages = await FoundItemChatMessage.find({ chat })
+      .sort({ createdAt: -1 })
+      .populate("sender", "_id reference");
+
+    res.status(201).json({ foundItemChat: chat, chatMessages });
+    
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .json({ message: "An error occurred while retrieving item chat." });
+  }
+};
+
 module.exports = {
   addRetrieveChat,
   closeChat,
-  getUserFoundChats
-}
+  getUserFoundChats,
+  getUserFoundChat,
+};
+
