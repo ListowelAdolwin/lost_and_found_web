@@ -5,7 +5,7 @@ const {addRetrieveChat, closeChat, getUserFoundChats} = require('../controllers/
 const router = express.Router()
 
 router.post("/chat", verifyToken, addRetrieveChat)
-router.get("/profile/:userId", getUserFoundChats)
+router.get("/profile/:userId", verifyToken, getUserFoundChats)
 router.get("close/:chatId", verifyToken, closeChat)
 
 module.exports = router

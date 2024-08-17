@@ -59,7 +59,7 @@ const closeChat = async (req, res) => {
   }
 }
 
-const getUserFoundChats = async () => {
+const getUserFoundChats = async (req, res) => {
   const { userId } = req.params
 
   try {
