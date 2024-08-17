@@ -66,7 +66,7 @@ const getUserFoundChats = async (req, res) => {
     const user = await User.findById(userId)
     const foundChats = await FoundItemChat.find({
       $or: [{ owner: user }, { poster: user }]
-    })
+    }).populate('item owner poster')
 
     res.status(200).json({foundChats})
   } catch (error) {
