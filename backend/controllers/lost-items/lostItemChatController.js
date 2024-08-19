@@ -64,11 +64,11 @@ const getUserLostChats = async (req, res) => {
 
   try {
     const user = await User.findById(userId)
-    const foundChats = await LostItemChat.find({
+    const lostChats = await LostItemChat.find({
       $or: [{ owner: user }, { founder: user }]
     }).populate('item owner founder')
 
-    res.status(200).json({foundChats})
+    res.status(200).json({lostChats})
   } catch (error) {
     res.status(500).json(error.message)
   }
@@ -94,7 +94,7 @@ const getUserLostChat = async (req, res) => {
       .sort({ createdAt: -1 })
       .populate("sender", "_id reference");
 
-    res.status(201).json({ foundItemChat: chat, chatMessages });
+    res.status(201).json({ lostItemChat: chat, chatMessages });
     
   } catch (error) {
     console.log(error);
