@@ -7,9 +7,9 @@ const lostItemchatMessageSchema = new mongoose.Schema(
       ref: 'LostItemChat',
       required: true
     },
-     sender: {
-      type: String,
-      enum: ['owner', 'poster'],
+    sender: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
       required: true
     },
     message: String,

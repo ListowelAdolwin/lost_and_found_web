@@ -9,7 +9,9 @@ const claimItemRoutes = require("./routes/claimRoutes.js")
 const feedbackRoutes = require("./routes/feedbackRoutes.js");
 const reportLostItemsRoutes = require("./routes/ReportFoundRoutes.js")
 const foundItemChatRoutes = require('./routes/foundItemChatRoutes.js')
+const lostItemChatRoutes = require('./routes/lost-items/lostItemChatRoutes.js')
 const FoundItemChatMessageRoutes = require('./routes/foundItemChatMessageRoutes.js')
+const LostItemChatMessageRoutes = require('./routes/lost-items/lostItemChatMessageRoutes.js')
 
 
 dotenv.config();
@@ -41,7 +43,9 @@ app.use('/api/claim', claimItemRoutes)
 app.use('/api/feedback', feedbackRoutes)
 app.use('/api/report-found', reportLostItemsRoutes)
 app.use('/api/found-items-chat', foundItemChatRoutes)
+app.use('/api/lost-items-chat', lostItemChatRoutes)
 app.use('/api/found-items-chat-message', FoundItemChatMessageRoutes)
+app.use('/api/lost-items-chat-message', LostItemChatMessageRoutes)
 
 connectDB()
 

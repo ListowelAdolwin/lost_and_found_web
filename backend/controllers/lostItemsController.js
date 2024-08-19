@@ -51,7 +51,7 @@ const getLostItem = async (req, res) => {
   const {id} = req.params
 
   try {
-    const item = await FoundItem.findById(id)
+    const item = await LostItem.findById(id)
     if (!item){
       return res.status(404).json({message: "Item not found"})
     }

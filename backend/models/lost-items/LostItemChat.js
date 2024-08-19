@@ -12,7 +12,7 @@ const lostItemchatSchema = new mongoose.Schema(
       ref: 'User',
       required: true
     },
-    poster: {
+    founder: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
       required: true
