@@ -65,7 +65,7 @@ const signin = async (req, res) => {
         _id: foundUser._id,
       },
       process.env.JWT_SECRET,
-      { expiresIn: '10d' }
+      { expiresIn: '30d' }
     )
 
     const { password: pass, ...rest } = foundUser._doc
