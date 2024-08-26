@@ -1,7 +1,7 @@
-import books from '../assets/upload_items/books.jpg'
-import devices from '../assets/upload_items/devices.jpg'
+import books from '../assets/upload_items/books_final.jpg'
+import devices from '../assets/upload_items/electronic_devices.avif'
 import cards from '../assets/upload_items/cards.jpg'
-import others from '../assets/upload_items/others.jpg'
+import others from '../assets/upload_items/bottle.jpg'
 
 const categories = {
   cards: {
