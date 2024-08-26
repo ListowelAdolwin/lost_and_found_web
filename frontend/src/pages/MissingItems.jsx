@@ -179,8 +179,9 @@ const MissingItems = props => {
                 // }}
               >
                 <CardMedia
+                className='max-h-46'
                   component='img'
-                  height='150'
+                  height='150px'
                   image={item.itemImages[0]}
                   alt={item.name}
                 />
