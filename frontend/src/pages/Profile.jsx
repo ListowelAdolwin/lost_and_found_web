@@ -117,7 +117,7 @@ function Profile () {
         </button>
       </nav>
 
-      <div className='mt-1 min-h-screen mb-20 dark:text-white'>
+      <div className='mt-3 min-h-screen mb-20 dark:text-white'>
         <div
           id='bar-with-underline-1'
           role='tabpanel'
@@ -125,7 +125,7 @@ function Profile () {
         >
           <div
             id='lost-items'
-            className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-6 justify-items-center justify-center'
+            className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-5 justify-items-center justify-center'
           >
             {lostItems.length > 0 ? (
               lostItems.map(item => (
