@@ -40,9 +40,15 @@ const addLostItem = async (req, res) => {
     });
 
     await newItem.save();
-    const itemMatched = await FoundItem.findOne({ itemID });
+    //const itemMatched = await FoundItem.findOne({ itemID });
 
-    res.status(201).json({ message: "Lost item added successfully", item: newItem, matched: itemMatched });
+    let matched = null;
+
+    if (itemID) {
+      matched = await FoundItem.findOne({ itemID });
+    }
+
+    res.status(201).json({ message: "Lost item added successfully", item: newItem, matched });
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Failed to add found item" });
