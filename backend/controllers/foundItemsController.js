@@ -99,4 +99,65 @@ const getUserProfileFoundItems = async (req, res) => {
   }
 };
 
-module.exports = { addFoundItem, getFoundItems, getFoundItem, getCategoryItems, getUserProfileFoundItems };
+const getFoundReports = async (req, res) => {
+  const { startDate, endDate } = req.body;
+
+  // const endDate = new Date();
+
+  // const startDate = new Date();
+  // startDate.setMonth(startDate.getMonth() - 1);
+  let dateFilter;
+
+  if (!startDate && !endDate) {
+    dateFilter = {};
+  }
+
+  if (startDate && endDate) {
+    dateFilter = {
+      createdAt: {
+        $gte: new Date(startDate),
+        $lte: new Date(endDate),
+      },
+    };
+  }
+
+  try {
+    const phoneCategoryCount = await FoundItem.countDocuments({ category: "phone", ...dateFilter });
+    const laptopCategoryCount = await FoundItem.countDocuments({ category: "laptop", ...dateFilter });
+    const moneyCategoryCount = await FoundItem.countDocuments({ category: "money", ...dateFilter });
+    const otherCategoryCount = await FoundItem.countDocuments({ category: "other", ...dateFilter });
+    const bookCategoryCount = await FoundItem.countDocuments({ category: "book", ...dateFilter });
+    const otherElectroniDeviceCategoryCount = await FoundItem.countDocuments({
+      category: "other_electronic_device",
+      ...dateFilter,
+    });
+    const cardCount = await FoundItem.countDocuments({
+      category: { $in: ["student_card", "other_card"] },
+      ...dateFilter,
+    });
+
+    const categoryCounts = [
+      phoneCategoryCount,
+      laptopCategoryCount,
+      moneyCategoryCount,
+      cardCount,
+      bookCategoryCount,
+      otherElectroniDeviceCategoryCount,
+      otherCategoryCount,
+    ];
+
+    console.log(categoryCounts);
+    return res.status(200).json({ report: categoryCounts });
+  } catch (error) {
+    console.error("Error counting categories:", error);
+  }
+};
+
+module.exports = {
+  addFoundItem,
+  getFoundItems,
+  getFoundItem,
+  getCategoryItems,
+  getUserProfileFoundItems,
+  getFoundReports,
+};
